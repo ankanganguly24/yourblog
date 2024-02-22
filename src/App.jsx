@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import authService from "./appwrite/auth";
 import { login, logout } from "./store/authSlice";
+import Footer from "./components/Footer/Footer.jsx";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -23,7 +24,9 @@ const App = () => {
   }, []);
 
   return !loading ? (
-    <div className="bg-secondary min-h-screen px-10 py-5"></div>
+    <div className="bg-secondary min-h-screen">
+      <Footer />
+    </div>
   ) : null;
 };
 
